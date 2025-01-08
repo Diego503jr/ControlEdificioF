@@ -1,0 +1,294 @@
+﻿<Window x:Class="ControlEdificioF.MainWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ControlEdificioF"
+        mc:Ignorable="d"
+        FontSize="18" 
+        Title="Dashboard" 
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{x:Null}"
+        Height="700" 
+        Width="1225"
+        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid Background="{DynamicResource MaterialDesignPaper}">
+        <DockPanel>
+            <materialDesign:Card
+                                 DockPanel.Dock="Left"
+                                 Width="350"
+                                 materialDesign:ShadowAssist.ShadowDepth="Depth4">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <Image 
+                            Margin="0,20,0,0" 
+                            Width="250"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Center"
+                            Source="/Assets/ITCALogo.png"/>
+
+                        <TreeView Margin="0,10,0,0">
+                            <TreeViewItem Header="Administracion"
+                                          IsExpanded="False">
+                                <WrapPanel 
+                                        Orientation="Horizontal" 
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center">
+
+                                    <Button x:Name="btnUsuario"
+                                            Style="{StaticResource bt-flat-normal}"
+                                            Height="40"
+                                            Click="btnUsuario_Click">
+                                        <WrapPanel Width="230">
+                                            <materialDesign:PackIcon Kind="People"
+                                                                     VerticalAlignment="Center"
+                                                                     Margin="0,0,10,0"/>
+                                            <TextBlock>Usuarios</TextBlock>
+                                        </WrapPanel>
+                                    </Button>
+                                </WrapPanel>
+
+                                <WrapPanel 
+                                        Orientation="Horizontal" 
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center">
+
+                                    <Button x:Name="btnEstudiante"
+                                            Style="{StaticResource bt-flat-normal}"
+                                            Height="40"
+                                            Click="btnEstudiante_Click">
+                                        <WrapPanel Width="230">
+                                            <materialDesign:PackIcon Kind="Person"
+                                                                     VerticalAlignment="Center"
+                                                                     Margin="0,0,10,0"/>
+                                            <TextBlock>Estudiantes</TextBlock>
+                                        </WrapPanel>
+                                    </Button>
+                                </WrapPanel>
+
+                                <WrapPanel 
+                                        Orientation="Horizontal" 
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center">
+                                    <Button x:Name="btnRoles"
+                                            Style="{StaticResource bt-flat-normal}"
+                                            Height="40" Click="btnRoles_Click">
+                                        <WrapPanel Width="230">
+                                            <materialDesign:PackIcon Kind="Rollupjs"
+                                                                     VerticalAlignment="Center"
+                                                                     Margin="0,0,10,0"/>
+                                            <TextBlock>Roles</TextBlock>
+                                        </WrapPanel>
+                                    </Button>
+                                </WrapPanel>
+
+                                <WrapPanel 
+                                        Orientation="Horizontal" 
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center">
+                                    <Button x:Name="btnCarreras"
+                                            Style="{StaticResource bt-flat-normal}"
+                                            Height="40" Click="btnCarreras_Click">
+                                        <WrapPanel Width="230">
+                                            <materialDesign:PackIcon Kind="School"
+                                                                     VerticalAlignment="Center"
+                                                                     Margin="0,0,10,0"/>
+                                            <TextBlock>Carreras</TextBlock>
+                                        </WrapPanel>
+                                    </Button>
+                                </WrapPanel>
+
+                            </TreeViewItem>
+                        </TreeView>
+
+                        <TreeView Margin="0,10,0,0">
+                            <TreeViewItem Header="Prestamo" 
+                                          IsExpanded="True">
+                                <WrapPanel 
+                                        Orientation="Horizontal" 
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center">
+                                    <Button x:Name="btnPrestamoHerramienta"
+                                            Style="{StaticResource bt-flat-normal}"
+                                            Height="40"
+                                            Click="btnPrestamoHerramienta_Click">
+                                        <WrapPanel Width="230">
+                                            <materialDesign:PackIcon Kind="FolderShared"
+                                                                     VerticalAlignment="Center"
+                                                                     Margin="0,0,10,0"/>
+                                            <TextBlock>Prestamo Herramienta</TextBlock>
+                                        </WrapPanel>
+                                    </Button>
+                                </WrapPanel>
+
+                                <WrapPanel Orientation="Horizontal" 
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center">
+                                    <Button x:Name="btnPrestamoEquipo"
+                                            Style="{StaticResource bt-flat-normal}"
+                                            Height="40"
+                                            Click="btnPrestamoEquipo_Click">
+                                        <WrapPanel Width="230">
+                                            <materialDesign:PackIcon Kind="FolderShared"
+                                                                     VerticalAlignment="Center"
+                                                                     Margin="0,0,10,0"/>
+                                            <TextBlock>Prestamo Equipo</TextBlock>
+                                        </WrapPanel>
+                                    </Button>
+                                </WrapPanel>
+                            </TreeViewItem>
+
+                        </TreeView>
+
+                        <TreeView Margin="0,10,0,0">
+                            <TreeViewItem Header="Edificio"
+                                          IsExpanded="False">
+                                <WrapPanel Orientation="Horizontal" 
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center">
+                                    <Button x:Name="btnCentroComputo"
+                                            Style="{StaticResource bt-flat-normal}"
+                                            Height="40"
+                                            Click="btnCentroComputo_Click">
+                                        <WrapPanel Width="230">
+                                            <materialDesign:PackIcon Kind="Lan"
+                                                                     VerticalAlignment="Center"
+                                                                     Margin="0,0,10,0"/>
+                                            <TextBlock>Computos</TextBlock>
+                                        </WrapPanel>
+                                    </Button>
+                                </WrapPanel>
+
+                                <WrapPanel Orientation="Horizontal" 
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center">
+                                    <Button x:Name="btnEquipo"
+                                            Style="{StaticResource bt-flat-normal}"
+                                            Height="40" Click="btnEquipo_Click">
+                                        <WrapPanel Width="230">
+                                            <materialDesign:PackIcon Kind="Computer"
+                                                                     VerticalAlignment="Center"
+                                                                     Margin="0,0,10,0"/>
+                                            <TextBlock>Equipos</TextBlock>
+                                        </WrapPanel>
+                                    </Button>
+                                </WrapPanel>
+
+                                <WrapPanel 
+                                        Orientation="Horizontal" 
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center">
+                                    <Button x:Name="btnControlHerramientas"
+                                            Style="{StaticResource bt-flat-normal}"
+                                            Height="40"
+                                            Click="btnControlHerramientas_Click">
+                                        <WrapPanel Width="230">
+                                            <materialDesign:PackIcon Kind="Build"
+                                                                     VerticalAlignment="Center"
+                                                                     Margin="0,0,10,0"/>
+                                            <TextBlock>Herramientas</TextBlock>
+                                        </WrapPanel>
+                                    </Button>
+                                </WrapPanel>
+
+                            </TreeViewItem>
+                        </TreeView>
+
+                        <TreeView Margin="0,20,0,0">
+                            <TreeViewItem Header="Mas"
+                                          IsExpanded="True">
+                                <WrapPanel 
+                                        Orientation="Horizontal" 
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center">
+                                    <Button x:Name="btnEstado"
+                                            Style="{StaticResource bt-flat-normal}"
+                                            Height="40" Click="btnEstado_Click">
+                                        <WrapPanel Width="230">
+                                            <materialDesign:PackIcon Kind="Domain"
+                                                                     VerticalAlignment="Center"
+                                                                     Margin="0,0,10,0"/>
+                                            <TextBlock>Estado</TextBlock>
+                                        </WrapPanel>
+                                    </Button>
+                                </WrapPanel>
+                                <WrapPanel 
+                                        Orientation="Horizontal" 
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center">
+                                    <Button x:Name="btnEstadoPrestamo"
+                                            Style="{StaticResource bt-flat-normal}"
+                                            Height="40" Click="btnEstadoPrestamo_Click">
+                                        <WrapPanel Width="230">
+                                            <materialDesign:PackIcon Kind="LocalActivity"
+                                                                     VerticalAlignment="Center"
+                                                                     Margin="0,0,10,0"/>
+                                            <TextBlock>Estado Prestamo</TextBlock>
+                                        </WrapPanel>
+                                    </Button>
+                                </WrapPanel>
+
+                                <WrapPanel 
+                                        Orientation="Horizontal" 
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center">
+                                    <Button x:Name="btnMarca"
+                                            Style="{StaticResource bt-flat-normal}"
+                                            Height="40" Click="btnMarca_Click">
+                                        <WrapPanel Width="230">
+                                            <materialDesign:PackIcon Kind="GlobeModel"
+                                     VerticalAlignment="Center"
+                                     Margin="0,0,10,0"/>
+                                            <TextBlock>Marcas</TextBlock>
+                                        </WrapPanel>
+                                    </Button>
+                                </WrapPanel>
+
+                                <WrapPanel 
+                                        Orientation="Horizontal" 
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center">
+                                    <Button x:Name="btnModelo"
+                                            Style="{StaticResource bt-flat-normal}"
+                                            Height="40" Click="btnModelo_Click">
+                                        <WrapPanel Width="230">
+                                            <materialDesign:PackIcon Kind="GlobeModel"
+                                                                     VerticalAlignment="Center"
+                                                                     Margin="0,0,10,0"/>
+                                            <TextBlock>Modelos</TextBlock>
+                                        </WrapPanel>
+                                    </Button>
+                                </WrapPanel>
+
+                            </TreeViewItem>
+                        </TreeView>
+
+                    </StackPanel>
+                </ScrollViewer>
+            </materialDesign:Card>
+            <!--<materialDesign:Card DockPanel.Dock="Right"
+                                 Width="300"
+                                 materialDesign:ShadowAssist.ShadowDepth="Depth4">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+
+                    </Grid.RowDefinitions>
+                    <Calendar x:Name="calendarGeneral"
+                              Grid.Row="0"
+                              Margin="0,20,0,0"
+                              Width="280"/>
+                </Grid>
+            </materialDesign:Card>-->
+
+            <Frame x:Name="fPrincipal"
+                   NavigationUIVisibility="Hidden"
+                   VerticalAlignment="Stretch"
+                   HorizontalAlignment="Stretch"/>
+
+        </DockPanel>
+    </Grid>
+</Window>

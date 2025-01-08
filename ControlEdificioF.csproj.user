@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\ComputoViews\CentroComputoView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ComputoViews\ComputoEquiposView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ComputoViews\EquipoView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\GlobalViews\EstadoPrestamoWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\GlobalViews\EstadoWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\GlobalViews\ModeloWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\HerramientaViews\ControlHerramientaView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\GlobalViews\MarcaWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PrestamoViews\PrestamoEquipoView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PrestamoViews\PrestamoHerramientaView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UsuarioViews\CarreraWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UsuarioViews\EstudianteView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UsuarioViews\RolWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UsuarioViews\UsuarioView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Buttons.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Cards.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Colors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\DataGrids.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\FormInputs.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ComputoViews\CentroComputoView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ComputoViews\ComputoEquiposView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ComputoViews\EquipoView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\GlobalViews\EstadoPrestamoWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\GlobalViews\EstadoWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\GlobalViews\ModeloWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\HerramientaViews\ControlHerramientaView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\GlobalViews\MarcaWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PrestamoViews\PrestamoEquipoView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PrestamoViews\PrestamoHerramientaView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UsuarioViews\CarreraWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UsuarioViews\EstudianteView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UsuarioViews\RolWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UsuarioViews\UsuarioView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

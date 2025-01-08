@@ -1,0 +1,70 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Botones normales--> 
+    <Style x:Key="bt-base" TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedButton}">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Height" Value="35" />
+        <Setter Property="Margin" Value="5 5"/>
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{StaticResource c-light}"/>
+    </Style>
+
+    <Style x:Key="bt-primary" TargetType="Button" BasedOn="{StaticResource bt-base}">
+        <Setter Property="Background" Value="{StaticResource c-primary}"/>
+    </Style>
+    
+    <Style x:Key="bt-success" TargetType="Button" BasedOn="{StaticResource bt-base}">
+        <Setter Property="Background" Value="{StaticResource c-success}"/>
+    </Style>
+
+    <Style x:Key="bt-danger" TargetType="Button" BasedOn="{StaticResource bt-base}">
+        <Setter Property="Background" Value="{StaticResource c-danger}"/>
+    </Style>
+
+    <Style x:Key="bt-warning" TargetType="Button" BasedOn="{StaticResource bt-base}">
+        <Setter Property="Background" Value="{StaticResource c-secondary}"/>
+    </Style>
+    
+    <Style x:Key="bt-info" TargetType="Button" BasedOn="{StaticResource bt-base}">
+        <Setter Property="Background" Value="{StaticResource c-info}"/>
+    </Style>
+
+    <!--Botones con interlineado-->
+    <Style x:Key="bt-flat" TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatButton}">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Height" Value="35"/>
+    </Style>
+
+    <Style x:Key="bt-flat-normal" TargetType="Button" BasedOn="{StaticResource bt-flat}">
+        <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+        <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+
+    <Style x:Key="bt-flat-primary" TargetType="Button" BasedOn="{StaticResource bt-flat-normal}">
+        <Setter Property="Foreground" Value="{StaticResource c-primary}" />
+        <Setter Property="BorderBrush" Value="{StaticResource c-primary}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Margin" Value="5" />
+    </Style>
+
+    <Style x:Key="bt-flat-success" TargetType="Button" BasedOn="{StaticResource bt-flat-primary}">
+        <Setter Property="Foreground" Value="{StaticResource c-success}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource c-success}" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+
+
+    <Style x:Key="bt-flat-warning" TargetType="Button" BasedOn="{StaticResource bt-flat-primary}">
+        <Setter Property="Foreground" Value="{StaticResource c-secondary}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource c-secondary}" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+
+    <Style x:Key="bt-flat-info" TargetType="Button" BasedOn="{StaticResource bt-flat-primary}">
+        <Setter Property="Foreground" Value="{StaticResource c-info}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource c-info}" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+
+</ResourceDictionary>

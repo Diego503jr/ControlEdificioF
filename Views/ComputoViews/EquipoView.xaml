@@ -1,0 +1,172 @@
+﻿<Page x:Class="ControlEdificioF.Views.ComputoViews.EquipoView"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ControlEdificioF.Views.ComputoViews"
+      mc:Ignorable="d" 
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontSize="18"
+      Title="EquipoView" Loaded="Page_Loaded">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" 
+                  HorizontalScrollBarVisibility="Auto">
+        <Grid Margin="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0"
+                   Content="Equipos"
+                   Style="{StaticResource lb-h1}"
+                   HorizontalAlignment="Left"/>
+
+            <Grid Grid.Row="1"
+                  Height="50"
+                  Width="770"
+                  HorizontalAlignment="Left">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="btnCrear" 
+                            Content="Crear un Equipo"
+                            Style="{StaticResource bt-flat-info}" 
+                            Click="btnCrear_Click"/>
+                    <Button x:Name="btnEditar"
+                            Content="Editar un Equipo" 
+                            Style="{StaticResource bt-flat-info}" 
+                            Click="btnEditar_Click"/>
+                    <!--<Button x:Name="btnEliminar" 
+                            Content="Eliminar" 
+                            Style="{StaticResource bt-flat-info}"/>-->
+                </StackPanel>
+            </Grid>
+
+            <StackPanel x:Name="spFormulario"
+                        Grid.Row="2"
+                        HorizontalAlignment="Left">
+                <materialDesign:Card Style="{StaticResource card-primary}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" 
+                               Content="Formulario Equipo"
+                               Style="{StaticResource lb-h2}"/>
+
+                        <TextBox x:Name="txtEquipo"
+                                 Grid.Row="1"
+                                 Grid.Column="0"
+                                 materialDesign:HintAssist.Hint="Equipo"
+                                 Style="{StaticResource txt-base}"/>
+                        <ComboBox x:Name="cbModelo"
+                                  Grid.Row="1"
+                                  Grid.Column="1"
+                                  materialDesign:HintAssist.Hint="Modelo"
+                                  Style="{StaticResource cb-base}" 
+                                  Cursor="Arrow">
+                            <ComboBoxItem>HP</ComboBoxItem>
+                            <ComboBoxItem>ACER</ComboBoxItem>
+                            <ComboBoxItem>DELL</ComboBoxItem>
+                        </ComboBox>
+                        <TextBox x:Name="txtCodigo"
+                                 Grid.Row="2"
+                                 Grid.Column="0"
+                                 materialDesign:HintAssist.Hint="Codigo"
+                                 Style="{StaticResource txt-base}"/>
+                        <TextBox x:Name="txtSerie"
+                                 Grid.Row="2"
+                                 Grid.Column="1"
+                                 materialDesign:HintAssist.Hint="Serie"
+                                 Style="{StaticResource txt-base}"/>
+                        <TextBox x:Name="txtMicroprocesador"
+                                 Grid.Row="3"
+                                 Grid.Column="0"
+                                 materialDesign:HintAssist.Hint="Microprocesador"
+                                 Style="{StaticResource txt-base}"/>
+                        <TextBox x:Name="txtRAM"
+                                 Grid.Row="3"
+                                 Grid.Column="1"
+                                 materialDesign:HintAssist.Hint="RAM"
+                                 Style="{StaticResource txt-base}"/>
+                        <TextBox x:Name="txtDisco"
+                                 VerticalAlignment="Center"
+                                 Grid.Row="4"
+                                 Grid.Column="0"
+                                 materialDesign:HintAssist.Hint="Disco"
+                                 Style="{StaticResource txt-base}"/>
+                        <ComboBox x:Name="cbEstado"
+                                  Grid.Row="4"
+                                  Grid.Column="1"
+                                  materialDesign:HintAssist.Hint="Estado"
+                                  Style="{StaticResource cb-base}" 
+                                  Cursor="Arrow">
+                            <ComboBoxItem>Activo</ComboBoxItem>
+                            <ComboBoxItem>inactivo</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox x:Name="cbCentroComputo"
+                                  Grid.Row="5"
+                                  Grid.Column="0"
+                                  materialDesign:HintAssist.Hint="Centro Computo"
+                                  Style="{StaticResource cb-base}" 
+                                  Cursor="Arrow">
+                            <ComboBoxItem>F-206</ComboBoxItem>
+                            <ComboBoxItem>F-306</ComboBoxItem>
+                            <ComboBoxItem>F-104</ComboBoxItem>
+                        </ComboBox>
+                        <TextBox x:Name="txtDetalle"
+                                 Height="70"
+                                 TextWrapping="Wrap"
+                                 Grid.Row="6"
+                                 Grid.ColumnSpan="2"
+                                 materialDesign:HintAssist.Hint="Detalle"
+                                 Style="{StaticResource txt-base}"/>
+                    </Grid>
+                </materialDesign:Card>
+
+                <Grid Width="770" 
+                      Height="50">
+                    <StackPanel Height="50" 
+                                HorizontalAlignment="Right" 
+                                Orientation="Horizontal">
+                        <Button x:Name="btnGuardar" 
+                                Content="Guardar"
+                                Style="{StaticResource bt-success}" 
+                                Click="btnGuardar_Click"/>
+                        <Button x:Name="btnCancelar" 
+                                Content="Cancelar"
+                                Style="{StaticResource bt-warning}" Click="btnCancelar_Click"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+
+            <DataGrid x:Name="dgEquipos"
+                      Grid.Row="4"
+                      HorizontalAlignment="Left"
+                      Style="{StaticResource dg-base}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Identificador"/>
+                    <DataGridTextColumn Header="Identificador"/>
+                    <DataGridTextColumn Header="Identificador"/>
+                    <DataGridTextColumn Header="Identificador"/>
+                    <DataGridTextColumn Header="Identificador"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            
+        </Grid>
+    </ScrollViewer>
+</Page>

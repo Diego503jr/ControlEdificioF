@@ -1,0 +1,75 @@
+﻿<Page x:Class="ControlEdificioF.Views.ComputoViews.ComputoEquiposView"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ControlEdificioF.Views.ComputoViews"
+      mc:Ignorable="d"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontSize="18"
+      Title="ComputoEquiposView">
+    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Auto">
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Equipos de Computo"
+                   Style="{StaticResource lb-h1}"
+                   HorizontalAlignment="Left"/>
+
+            <Grid  Grid.Row="1"
+                   Margin="20 10"
+                   Width="770"
+                   HorizontalAlignment="Left">
+                <ComboBox x:Name="cbCentroComputo"
+                          HorizontalAlignment="Left"
+                          Width="150"
+                          Height="50"
+                          materialDesign:HintAssist.Hint="Centro Computo"
+                          Style="{StaticResource cb-base}">
+                    <ComboBoxItem Selector.IsSelected="True">Sin Filtro</ComboBoxItem>
+                    <ComboBoxItem>F-206</ComboBoxItem>
+                    <ComboBoxItem>F-106</ComboBoxItem>
+                    <ComboBoxItem>F-306</ComboBoxItem>
+                </ComboBox>
+
+                <Button x:Name="btnAtras"
+                        FontSize="18" 
+                        Click="btnAtras_Click"
+                        Style="{StaticResource bt-flat}"
+                        HorizontalAlignment="Right">
+                    <WrapPanel>
+                        <materialDesign:PackIcon Kind="Undo"
+                                 VerticalAlignment="Center"
+                                 Margin="0,0,10,0"/>
+                        <TextBlock Text="Atras"/>
+                    </WrapPanel>
+                </Button>
+            </Grid>
+
+            <DataGrid x:Name="dgEquiposComputo"
+                      Grid.Row="2"
+                      HorizontalAlignment="Left"
+                      Height="400"
+                      Style="{StaticResource dg-base}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Aula"/>
+                    <DataGridTextColumn Header="Equipo"/>
+                    <DataGridTextColumn Header="Modelo"/>
+                    <DataGridTextColumn Header="Codigo"/>
+                    <DataGridTextColumn Header="Serie"/>
+                    <DataGridTextColumn Header="Microprocesador"/>
+                    <DataGridTextColumn Header="RAM"/>
+                    <DataGridTextColumn Header="Disco"/>
+                    <DataGridTextColumn Header="Detalle"/>
+                    <DataGridTextColumn Header="Acciones"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </ScrollViewer>
+</Page>

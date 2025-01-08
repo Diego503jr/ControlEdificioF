@@ -1,0 +1,231 @@
+﻿<Page x:Class="ControlEdificioF.Views.PrestamoViews.PrestamoHerramientaView"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ControlEdificioF.Views.PrestamoViews"
+      mc:Ignorable="d" 
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontSize="18"
+      Title="PrestamoHerramientaView" Loaded="Page_Loaded">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" 
+                  HorizontalScrollBarVisibility="Auto">
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0"
+                   Content="Prestamo Herramienta" 
+                   Style="{StaticResource lb-h1}"
+                   HorizontalAlignment="Left"/>
+
+            <Grid Grid.Row="1"
+                  Height="50"
+                  Width="770"
+                  HorizontalAlignment="Left">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="btnCrear" 
+                            Content="Crear un Prestamo"
+                            Style="{StaticResource bt-flat-info}" 
+                            Click="btnCrear_Click"/>
+                    <Button x:Name="btnEditar"
+                            Content="Actualizar un Prestamo" 
+                            Style="{StaticResource bt-flat-info}" Click="btnEditar_Click"/>
+                    <!--<Button x:Name="btnEliminar" 
+                            Content="Eliminar" 
+                            Style="{StaticResource bt-flat-info}"/>-->
+                </StackPanel>
+            </Grid>
+
+            <StackPanel x:Name="spFormulario" 
+                        Grid.Row="2"
+                        HorizontalAlignment="Left">
+                <materialDesign:Card Style="{StaticResource card-primary}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Column="0"
+                               Grid.Row="0"
+                               Content="Formulario Docente"
+                               Style="{StaticResource lb-h2}"/>
+
+                        <Button Grid.Column="1"
+                                Margin="50 0"
+                                Grid.Row="0"
+                                Style="{StaticResource bt-flat-normal}">
+                            <WrapPanel Width="250"
+                                       VerticalAlignment="Center"
+                                       Height="35">
+                                <materialDesign:PackIcon Kind="Search" 
+                                                         Height="35"
+                                                         Margin="10 0"
+                                                         Width="25"
+                                                         VerticalAlignment="Center"/>
+                                <Label Content="Buscar Docente"/>
+                            </WrapPanel>
+                        </Button>
+
+                        <ComboBox x:Name="cbDocentePrestamo"
+                                  Grid.Row="1"
+                                  Grid.Column="0"
+                                  materialDesign:HintAssist.Hint="Docente"
+                                  Style="{StaticResource cb-base}" 
+                                  Cursor="Arrow">
+                            <ComboBoxItem Content="F-206"/>
+                            <ComboBoxItem Content="F-306"/>
+                            <ComboBoxItem Content="F-104"/>
+                        </ComboBox>
+                        <DatePicker x:Name="dtpFechaPrestamoHerramienta"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                materialDesign:HintAssist.Hint="Seleccione la fecha"
+                                Style="{StaticResource dp-base}"/>
+                        <ComboBox x:Name="cbCentroComputo"
+                              Grid.Row="2"
+                              Grid.Column="0"
+                              materialDesign:HintAssist.Hint="Centro Computo"
+                              Style="{StaticResource cb-base}" 
+                              Cursor="Arrow">
+                            <ComboBoxItem Content="F-206"/>
+                            <ComboBoxItem Content="F-306"/>
+                            <ComboBoxItem Content="F-104"/>
+                        </ComboBox>
+                        <ComboBox x:Name="cbHerramienta"
+                              Grid.Row="2" 
+                              Grid.Column="1"
+                              materialDesign:HintAssist.Hint="Herramienta"
+                              Style="{StaticResource cb-base}"
+                              Cursor="Arrow">
+                            <ComboBoxItem Content="Cañon"/>
+                            <ComboBoxItem Content="Guia"/>
+                            <ComboBoxItem Content="Adaptador"/>
+                        </ComboBox>
+                        <TextBox x:Name="txtCantidadPrestamoHerramienta"
+                             Grid.Row="3"
+                             Grid.Column="0"
+                             materialDesign:HintAssist.Hint="Cantidad a prestar"
+                             Style="{StaticResource txt-base}"/>
+                        <ComboBox x:Name="cbEstadoPrestamo"
+                              Grid.Row="3"
+                              Grid.Column="1"
+                              materialDesign:HintAssist.Hint="Estado del prestamo"
+                              Style="{StaticResource cb-base}"
+                              Cursor="Arrow">
+                            <ComboBoxItem Content="En uso"/>
+                            <ComboBoxItem Content="Devuelto"/>
+                        </ComboBox>
+                        <TextBox x:Name="txtDUIRecibido"
+                             Grid.Row="4"
+                             Margin="10 10"
+                             Grid.Column="0"
+                             materialDesign:HintAssist.Hint="DUI Recibido"
+                             Style="{StaticResource txt-base}"/>
+                        <TextBox x:Name="txtDUIEntregado"
+                             Grid.Row="4"
+                             Grid.Column="1"
+                             materialDesign:HintAssist.Hint="DUI Entregado"
+                             Style="{StaticResource txt-base}"/>
+                    </Grid>
+                </materialDesign:Card>
+
+                <materialDesign:Card Style="{StaticResource card-primary}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Label Content="Formulario Tecnico"
+                           FontSize="18"
+                           Margin="10 10"/>
+
+                        <ComboBox x:Name="cbTecnicoEntrega"
+                                  Grid.Row="1" 
+                                  Grid.Column="0"
+                                  materialDesign:HintAssist.Hint="Entrega Tecnico"
+                                  Style="{StaticResource cb-base}"
+                                  Cursor="Arrow">
+                            <ComboBoxItem Content="Cañon"/>
+                            <ComboBoxItem Content="Guia"/>
+                            <ComboBoxItem Content="Adaptador"/>
+                        </ComboBox>
+                        <materialDesign:TimePicker x:Name="tmpHoraEntregaHerramienta"
+                                                Grid.Row="1"
+                                                Grid.Column="1"
+                                                materialDesign:HintAssist.Hint="Seleccione la hora de Entrega"
+                                                Style="{StaticResource tp-base}"/>
+                        <ComboBox x:Name="cbTecnicoRecibe"
+                                  Grid.Row="2"
+                                  Grid.Column="0"
+                             materialDesign:HintAssist.Hint="Recibe Tecnico"
+                                  Style="{StaticResource cb-base}"
+                                  Cursor="Arrow">
+                            <ComboBoxItem Content="Cañon"/>
+                            <ComboBoxItem Content="Guia"/>
+                            <ComboBoxItem Content="Adaptador"/>
+                        </ComboBox>
+                        <materialDesign:TimePicker x:Name="tmpHoraRecibeHerramienta"
+                                               Grid.Row="2"
+                                               Grid.Column="1"
+                                               materialDesign:HintAssist.Hint="Seleccione la hora de Devolucion"
+                                               Style="{StaticResource tp-base}"/>
+                    </Grid>
+                </materialDesign:Card>
+
+                <Grid Width="770" 
+                      Height="50">
+                    <StackPanel Height="50" 
+                            HorizontalAlignment="Right" 
+                            Orientation="Horizontal">
+                        <Button x:Name="btnEntregar" 
+                                Content="Entregar"
+                                Style="{StaticResource bt-success}" 
+                                Click="btnEntregar_Click"/>
+                        <Button x:Name="btnCancelar" 
+                                Content="Cancelar"
+                                Style="{StaticResource bt-warning}" Click="btnCancelar_Click"/>
+                        <Button x:Name="btnDevuelto" 
+                                Content="Devuelto"
+                                Style="{StaticResource bt-danger}" />
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+
+            <DataGrid x:Name="dgPrestamoHerramienta"
+                      Grid.Row="5"
+                      HorizontalAlignment="Left"
+                      Style="{StaticResource dg-base}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Historial" />
+                    <DataGridTextColumn Header="Historial" />
+                    <DataGridTextColumn Header="Historial" />
+                    <DataGridTextColumn Header="Historial" />
+                </DataGrid.Columns>
+            </DataGrid>
+            
+        </Grid>
+    </ScrollViewer>
+</Page>

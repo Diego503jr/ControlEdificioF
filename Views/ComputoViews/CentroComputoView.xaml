@@ -1,0 +1,132 @@
+﻿<Page x:Class="ControlEdificioF.Views.ComputoViews.CentroComputoView"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ControlEdificioF.Views.ComputoViews"
+      mc:Ignorable="d"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontSize="18"
+      Title="CentroComputoView" Loaded="Page_Loaded">
+    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Auto">
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0"
+                   Content="Centro de computo"
+                   HorizontalAlignment="Left"
+                   Style="{StaticResource lb-h1}"/>
+
+            <Grid Grid.Row="1"
+                  Height="50"
+                  Width="770"
+                  HorizontalAlignment="Left">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="btnCrear" 
+                            Content="Crear un Centro computo"
+                            Style="{StaticResource bt-flat-info}" 
+                            Click="btnCrear_Click"/>
+                    <Button x:Name="btnEditar"
+                            Content="Editar un Centro computo" 
+                            Style="{StaticResource bt-flat-info}" 
+                            Click="btnEditar_Click"/>
+                    <!--<Button x:Name="btnEliminar" 
+                            Content="Eliminar" 
+                            Style="{StaticResource bt-flat-info}"/>-->
+                </StackPanel>
+            </Grid>
+
+            <materialDesign:Card Style="{StaticResource card-primary}" 
+                    Grid.Row="2"
+                    HorizontalAlignment="Left">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Label  Grid.Row="0" 
+                            Content="Formulario Centro Computo"
+                           Style="{StaticResource lb-h2}"/>
+
+                    <TextBox x:Name="txtComputo"
+                             Grid.Row="1"
+                             Grid.Column="0"
+                             materialDesign:HintAssist.Hint="Centro Computo"
+                             Style="{StaticResource txt-base}"/>
+                    <ComboBox x:Name="cbEstado"
+                              Grid.Row="1"
+                              Grid.Column="1"
+                              materialDesign:HintAssist.Hint="Estado"
+                              Style="{StaticResource cb-base}">
+                        <ComboBoxItem>Activo</ComboBoxItem>
+                        <ComboBoxItem>inactivo</ComboBoxItem>
+                    </ComboBox>
+                    <Button x:Name="btnVerInventario"
+                            Style="{StaticResource bt-flat-primary}"
+                            Grid.Row="2"
+                            Margin="20"
+                            Height="50" 
+                            Grid.ColumnSpan="2"
+                            Click="btnVerInventario_Click">
+                        <WrapPanel>
+                            <materialDesign:PackIcon Kind="CursorHand"
+                                                     VerticalAlignment="Center"
+                                                     Margin="0,0,10,0"/>
+                            <TextBlock>Ver Inventario de Equipos</TextBlock>
+                        </WrapPanel>
+                    </Button>
+                </Grid>
+            </materialDesign:Card>
+
+            <Grid x:Name="gContenedorBotones" Grid.Row="3" 
+                  Width="770" 
+                  Height="50"
+                  HorizontalAlignment="Left">
+                <StackPanel Height="50" 
+                            HorizontalAlignment="Right" 
+                            Orientation="Horizontal">
+                    <Button x:Name="btnGuardar" 
+                            Content="Guardar"
+                            Style="{StaticResource bt-success}" 
+                            Click="btnGuardar_Click"/>
+                    <Button x:Name="btnCancelar" 
+                            Content="Cancelar"
+                            Style="{StaticResource bt-warning}" 
+                            Click="btnCancelar_Click"/>
+                </StackPanel>
+            </Grid>
+            
+
+            <DataGrid x:Name="dgCentroComputo"
+                      Grid.Row="4"
+                      HorizontalAlignment="Left"
+                      Style="{StaticResource dg-base}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Historial" 
+                                        Binding="{Binding MesaId}" />
+                    <DataGridTextColumn Header="Historial" 
+                                        Binding="{Binding MesaId}" />
+                    <DataGridTextColumn Header="Historial" 
+                                        Binding="{Binding MesaId}" />
+                    <DataGridTextColumn Header="Historial" 
+                                        Binding="{Binding MesaId}" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+    </ScrollViewer>
+</Page>
