@@ -43,11 +43,7 @@ namespace ControlEdificioF
 
         private void btnPrestamoHerramienta_Click(object sender, RoutedEventArgs e)
         {
-            if (phv == null)
-            {
-                phv = new PrestamoHerramientaView();
-            }
-
+            phv = new PrestamoHerramientaView();
             fPrincipal.NavigationService.Navigate(phv);
         }
 
@@ -125,10 +121,7 @@ namespace ControlEdificioF
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            if(phv == null)
-            {
-                phv = new PrestamoHerramientaView();
-            }
+            phv = new PrestamoHerramientaView();
             fPrincipal.Navigate(phv);
         }
 

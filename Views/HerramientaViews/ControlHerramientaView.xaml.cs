@@ -118,6 +118,7 @@ namespace ControlEdificioF.Views.HerramientaViews
                     btnEditar.Visibility = Visibility.Collapsed;
 
                     spFormulario.Visibility = Visibility.Visible;
+                    txtCodigoBarraHerramienta.Focus();
                 }
                 else if (editando)
                 {
@@ -125,6 +126,7 @@ namespace ControlEdificioF.Views.HerramientaViews
                     btnEditar.Visibility = Visibility.Collapsed;
 
                     spFormulario.Visibility = Visibility.Visible;
+                    txtCodigoBarraHerramienta.Focus();
                 }
             }
         }
@@ -142,7 +144,6 @@ namespace ControlEdificioF.Views.HerramientaViews
         }
 
         #endregion
-
 
         #region METODOS DEL FORMULARIO
 

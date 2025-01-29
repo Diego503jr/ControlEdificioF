@@ -13,44 +13,9 @@ namespace ControlEdificioF.Model
         private string _Apellido_Estudiante;
         private int _Carnet_Estudiante;
 
-        public int EstudianteID
-        {
-            get => _EstudianteID;
-
-            set => _EstudianteID = value;
-        }
-
-        public string NombreEstudiante
-        {
-            get => _Nombre_Estudiante;
-
-            set
-            {
-                if (_Nombre_Estudiante != value)
-                {
-                    _Nombre_Estudiante = value;
-                }
-            }
-        }
-
-        public string ApellidoEstudiante
-        {
-            get => _Apellido_Estudiante;
-
-            set
-            {
-                if (_Apellido_Estudiante != value)
-                {
-                    _Apellido_Estudiante = value;
-                }
-            }
-        }
-
-        public int CarnetEstudiante
-        {
-            get => _Carnet_Estudiante;
-
-            set => _Carnet_Estudiante = value;
-        }
+        public int EstudianteID { get => _EstudianteID; set => _EstudianteID = value; }
+        public string Nombre_Estudiante { get => _Nombre_Estudiante; set => _Nombre_Estudiante = value; }
+        public string Apellido_Estudiante { get => _Apellido_Estudiante; set => _Apellido_Estudiante = value; }
+        public int Carnet_Estudiante { get => _Carnet_Estudiante; set => _Carnet_Estudiante = value; }
     }
 }

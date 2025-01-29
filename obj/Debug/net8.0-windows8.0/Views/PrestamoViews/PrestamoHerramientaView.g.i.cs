@@ -208,8 +208,7 @@ namespace ControlEdificioF.Views.PrestamoViews {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ControlEdificioF;V1.0.0.0;component/views/prestamoviews/prestamoherramientaview." +
-                    "xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ControlEdificioF;component/views/prestamoviews/prestamoherramientaview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\PrestamoViews\PrestamoHerramientaView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

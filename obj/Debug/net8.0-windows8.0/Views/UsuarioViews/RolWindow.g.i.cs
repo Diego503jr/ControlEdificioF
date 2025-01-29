@@ -112,7 +112,7 @@ namespace ControlEdificioF.Views.UsuarioViews {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ControlEdificioF;V1.0.0.0;component/views/usuarioviews/rolwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ControlEdificioF;component/views/usuarioviews/rolwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\UsuarioViews\RolWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Diego Carías\source\repos\ControlEdificioF\obj\Debug\net8.0-windows8.0\
+C:\Users\diego\source\repos\ControlEdificioF\obj\Debug\net8.0-windows8.0\
 ControlEdificioF
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\Diego Carías\source\repos\ControlEdificioF\App.xaml
-2070418972
+C:\Users\diego\source\repos\ControlEdificioF\App.xaml
+201406869421
 
-26-1544707360
-200-1933248279
-MainWindow.xaml;Styles\Buttons.xaml;Styles\Cards.xaml;Styles\Colors.xaml;Styles\DataGrids.xaml;Styles\FormInputs.xaml;Views\ComputoViews\CentroComputoView.xaml;Views\ComputoViews\ComputoEquiposView.xaml;Views\ComputoViews\EquipoView.xaml;Views\GlobalViews\EstadoPrestamoWindow.xaml;Views\GlobalViews\EstadoWindow.xaml;Views\GlobalViews\MarcaWindow.xaml;Views\GlobalViews\ModeloWindow.xaml;Views\HerramientaViews\ControlHerramientaView.xaml;Views\PrestamoViews\PrestamoEquipoView.xaml;Views\PrestamoViews\PrestamoHerramientaView.xaml;Views\UsuarioViews\CarreraWindow.xaml;Views\UsuarioViews\EstudianteView.xaml;Views\UsuarioViews\RolWindow.xaml;Views\UsuarioViews\UsuarioView.xaml;
+371347418218
+2231647545387
+MainWindow.xaml;Resources\Styles\Buttons.xaml;Resources\Styles\Cards.xaml;Resources\Styles\Colors.xaml;Resources\Styles\DataGrids.xaml;Resources\Styles\FormInputs.xaml;Views\ComputoViews\CentroComputoView.xaml;Views\ComputoViews\ComputoEquiposView.xaml;Views\ComputoViews\EquipoView.xaml;Views\GlobalViews\EstadoPrestamoWindow.xaml;Views\GlobalViews\EstadoWindow.xaml;Views\GlobalViews\MarcaWindow.xaml;Views\GlobalViews\ModeloWindow.xaml;Views\HerramientaViews\ControlHerramientaView.xaml;Views\PrestamoViews\PrestamoEquipoView.xaml;Views\PrestamoViews\PrestamoHerramientaView.xaml;Views\UsuarioViews\CarreraWindow.xaml;Views\UsuarioViews\EstudianteView.xaml;Views\UsuarioViews\RolWindow.xaml;Views\UsuarioViews\UsuarioView.xaml;
 
 False
 

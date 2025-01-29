@@ -80,7 +80,7 @@ namespace ControlEdificioF.Views.ComputoViews {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ControlEdificioF;V1.0.0.0;component/views/computoviews/computoequiposview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ControlEdificioF;component/views/computoviews/computoequiposview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\ComputoViews\ComputoEquiposView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -54,19 +54,19 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Buttons.xaml">
+    <Page Update="Resources\Styles\Buttons.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Cards.xaml">
+    <Page Update="Resources\Styles\Cards.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Colors.xaml">
+    <Page Update="Resources\Styles\Colors.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\DataGrids.xaml">
+    <Page Update="Resources\Styles\DataGrids.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\FormInputs.xaml">
+    <Page Update="Resources\Styles\FormInputs.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ComputoViews\CentroComputoView.xaml">

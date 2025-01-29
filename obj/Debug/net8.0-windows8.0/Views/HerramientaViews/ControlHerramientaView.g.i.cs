@@ -160,8 +160,7 @@ namespace ControlEdificioF.Views.HerramientaViews {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ControlEdificioF;V1.0.0.0;component/views/herramientaviews/controlherramientavie" +
-                    "w.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ControlEdificioF;component/views/herramientaviews/controlherramientaview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\HerramientaViews\ControlHerramientaView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
