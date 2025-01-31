@@ -51,9 +51,9 @@
             <StackPanel x:Name="spFormulario"
                         Grid.Row="2"
                         Width="650"
-                        HorizontalAlignment="Left">
+                        HorizontalAlignment="Center">
                 
-            <materialDesign:Card Style="{StaticResource card-primary}">
+            <materialDesign:Card >
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
