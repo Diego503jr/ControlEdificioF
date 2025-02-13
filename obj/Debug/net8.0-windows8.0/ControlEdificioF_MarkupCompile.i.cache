@@ -12,7 +12,7 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\diego\source\repos\ControlEdificioF\App.xaml
 201406869421
 
-411132269134
+47-178145622
 2231647545387
 MainWindow.xaml;Resources\Styles\Buttons.xaml;Resources\Styles\Cards.xaml;Resources\Styles\Colors.xaml;Resources\Styles\DataGrids.xaml;Resources\Styles\FormInputs.xaml;Views\ComputoViews\CentroComputoView.xaml;Views\ComputoViews\ComputoEquiposView.xaml;Views\ComputoViews\EquipoView.xaml;Views\GlobalViews\EstadoPrestamoWindow.xaml;Views\GlobalViews\EstadoWindow.xaml;Views\GlobalViews\MarcaWindow.xaml;Views\GlobalViews\ModeloWindow.xaml;Views\HerramientaViews\ControlHerramientaView.xaml;Views\PrestamoViews\PrestamoEquipoView.xaml;Views\PrestamoViews\PrestamoHerramientaView.xaml;Views\UsuarioViews\CarreraWindow.xaml;Views\UsuarioViews\EstudianteView.xaml;Views\UsuarioViews\RolWindow.xaml;Views\UsuarioViews\UsuarioView.xaml;
 
