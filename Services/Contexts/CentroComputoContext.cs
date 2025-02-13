@@ -12,14 +12,25 @@ using System.Windows.Media.Media3D;
 
 namespace ControlEdificioF.Services.Contexts
 {
-    internal class CentroComputoContext :  DbContextMySql, IBaseContext<CentroComputoModel>
+    /// <summary>
+    /// Contexto de base de datos para operaciones CRUD de centros de cómputo
+    /// Implementa la interfaz genérica IBaseContext para operaciones estándar
+    /// </summary>
+    internal class CentroComputoContext : DbContextMySql, IBaseContext<CentroComputoModel>
     {
+        /// <summary>
+        /// Constructor que inicializa el contexto con la configuración de base de datos
+        /// </summary>
         public CentroComputoContext(ConfigDb configDb) : base(configDb) { }
 
+        /// <summary>
+        /// Crea un nuevo registro de centro de cómputo en la base de datos
+        /// </summary>
+        /// <param name="centroComputo">Datos del centro de cómputo a crear</param>
+        /// <returns>Número de filas afectadas o -1 en caso de error</returns>
         public int Create(CentroComputoModel centroComputo)
         {
             int res = -1;
-
             try
             {
                 using (var connection = CreateConnection())
@@ -38,13 +49,16 @@ namespace ControlEdificioF.Services.Contexts
             {
                 Console.WriteLine(ex.Message);
             }
-
             return res;
         }
+
+        /// <summary>
+        /// Obtiene todos los centros de cómputo desde la vista vcentrocomputo
+        /// </summary>
+        /// <returns>Colección observable de centros de cómputo o colección vacía en caso de error</returns>
         public ObservableCollection<CentroComputoModel> Read()
         {
             ObservableCollection<CentroComputoModel> lstComputo = new ObservableCollection<CentroComputoModel>();
-
             try
             {
                 using (var connection = CreateConnection())
@@ -71,14 +85,17 @@ namespace ControlEdificioF.Services.Contexts
             {
                 Console.WriteLine(ex.Message);
             }
-
             return lstComputo;
         }
 
+        /// <summary>
+        /// Actualiza los datos de un centro de cómputo existente
+        /// </summary>
+        /// <param name="centroComputo">Datos actualizados del centro de cómputo</param>
+        /// <returns>Número de filas afectadas o -1 en caso de error</returns>
         public int Update(CentroComputoModel centroComputo)
         {
             int res = -1;
-
             try
             {
                 using (var connection = CreateConnection())
@@ -98,14 +115,17 @@ namespace ControlEdificioF.Services.Contexts
             {
                 Console.WriteLine(ex.Message);
             }
-
             return res;
         }
 
+        /// <summary>
+        /// Elimina un centro de cómputo específico de la base de datos
+        /// </summary>
+        /// <param name="centroComputo">Modelo que contiene el ID del centro de cómputo a eliminar</param>
+        /// <returns>Número de filas afectadas o -1 en caso de error</returns>
         public int Delete(CentroComputoModel centroComputo)
         {
             int res = -1;
-
             try
             {
                 using (var connection = CreateConnection())
@@ -123,7 +143,6 @@ namespace ControlEdificioF.Services.Contexts
             {
                 Console.WriteLine(ex.Message);
             }
-
             return res;
         }
     }

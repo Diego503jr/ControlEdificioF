@@ -11,14 +11,25 @@ using System.Threading.Tasks;
 
 namespace ControlEdificioF.Services.Contexts
 {
+    /// <summary>
+    /// Contexto de base de datos para operaciones CRUD de estados
+    /// Implementa la interfaz genérica IBaseContext para operaciones estándar
+    /// </summary>
     internal class EstadoContext : DbContextMySql, IBaseContext<EstadoModel>
     {
+        /// <summary>
+        /// Constructor que inicializa el contexto con la configuración de base de datos
+        /// </summary>
         public EstadoContext(ConfigDb config) : base(config) { }
 
+        /// <summary>
+        /// Crea un nuevo registro de estado en la base de datos
+        /// </summary>
+        /// <param name="estado">Datos del estado a crear</param>
+        /// <returns>Número de filas afectadas o -1 en caso de error</returns>
         public int Create(EstadoModel estado)
         {
             int res = -1;
-
             try
             {
                 using (var connection = CreateConnection())
@@ -26,24 +37,24 @@ namespace ControlEdificioF.Services.Contexts
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "SPCreateEstado";
-
                     command.Parameters.AddWithValue("e_estado", estado.Estado);
-
                     res = command.ExecuteNonQuery();
                 }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-
             return res;
         }
 
-        public ObservableCollection<EstadoModel> Read() 
+        /// <summary>
+        /// Obtiene todos los estados desde la vista vestado
+        /// </summary>
+        /// <returns>Colección observable de estados o colección vacía en caso de error</returns>
+        public ObservableCollection<EstadoModel> Read()
         {
             ObservableCollection<EstadoModel> lstEstado = new ObservableCollection<EstadoModel>();
-
             try
             {
                 using (var connection = CreateConnection())
@@ -51,7 +62,6 @@ namespace ControlEdificioF.Services.Contexts
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "vestado";
-
                     using (DbDataReader ddr = command.ExecuteReader())
                     {
                         while (ddr.Read())
@@ -69,14 +79,17 @@ namespace ControlEdificioF.Services.Contexts
             {
                 Console.WriteLine(ex.Message);
             }
-
             return lstEstado;
         }
 
-        public int Update(EstadoModel estado) 
+        /// <summary>
+        /// Actualiza los datos de un estado existente
+        /// </summary>
+        /// <param name="estado">Datos actualizados del estado</param>
+        /// <returns>Número de filas afectadas o -1 en caso de error</returns>
+        public int Update(EstadoModel estado)
         {
             int res = -1;
-
             try
             {
                 using (var connection = CreateConnection())
@@ -84,11 +97,8 @@ namespace ControlEdificioF.Services.Contexts
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "SPUpdateEstado";
-
                     command.Parameters.AddWithValue("e_estadoid", estado.EstadoID);
                     command.Parameters.AddWithValue("e_estado", estado.Estado);
-
-
                     res = command.ExecuteNonQuery();
                 }
             }
@@ -96,11 +106,15 @@ namespace ControlEdificioF.Services.Contexts
             {
                 Console.WriteLine(ex.Message);
             }
-
             return res;
         }
 
-        public int Delete(EstadoModel estadoModel) 
+        /// <summary>
+        /// Método Delete no implementado
+        /// </summary>
+        /// <param name="estadoModel">Modelo del estado</param>
+        /// <returns>Siempre retorna -1 indicando no implementación</returns>
+        public int Delete(EstadoModel estadoModel)
         {
             int res = -1;
             return res;
