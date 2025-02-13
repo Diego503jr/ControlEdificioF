@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net8.0-windows8.0": {
+    "net8.0-windows7.0": {
       "BouncyCastle.Cryptography/2.2.1": {
         "type": "package",
         "compile": {
@@ -4034,7 +4034,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net8.0-windows8.0": [
+    "net8.0-windows7.0": [
       "CommunityToolkit.Mvvm >= 8.4.0",
       "MaterialDesignColors >= 2.0.1",
       "MaterialDesignThemes >= 4.1.0",
@@ -4066,15 +4066,15 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net8.0-windows8.0"
+        "net8.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net8.0-windows8.0": {
-          "targetAlias": "net8.0-windows8.0",
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows7.0",
           "projectReferences": {}
         }
       },
@@ -4091,8 +4091,8 @@
       "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
-      "net8.0-windows8.0": {
-        "targetAlias": "net8.0-windows8.0",
+      "net8.0-windows7.0": {
+        "targetAlias": "net8.0-windows7.0",
         "dependencies": {
           "CommunityToolkit.Mvvm": {
             "target": "Package",

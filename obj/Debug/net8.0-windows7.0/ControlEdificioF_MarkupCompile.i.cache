@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Diego Carías\source\repos\ControlEdificioF\obj\Debug\net8.0-windows7.0\
+C:\Users\diego\source\repos\ControlEdificioF\obj\Debug\net8.0-windows7.0\
 ControlEdificioF
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\Diego Carías\source\repos\ControlEdificioF\App.xaml
-2787170672
+C:\Users\diego\source\repos\ControlEdificioF\App.xaml
+201406869421
 
-6-767182331
-198-1431420039
-MainWindow.xaml;Styles.xaml;
+49-1718987138
+2231647545387
+MainWindow.xaml;Resources\Styles\Buttons.xaml;Resources\Styles\Cards.xaml;Resources\Styles\Colors.xaml;Resources\Styles\DataGrids.xaml;Resources\Styles\FormInputs.xaml;Views\ComputoViews\CentroComputoView.xaml;Views\ComputoViews\ComputoEquiposView.xaml;Views\ComputoViews\EquipoView.xaml;Views\GlobalViews\EstadoPrestamoWindow.xaml;Views\GlobalViews\EstadoWindow.xaml;Views\GlobalViews\MarcaWindow.xaml;Views\GlobalViews\ModeloWindow.xaml;Views\HerramientaViews\ControlHerramientaView.xaml;Views\PrestamoViews\PrestamoEquipoView.xaml;Views\PrestamoViews\PrestamoHerramientaView.xaml;Views\UsuarioViews\CarreraWindow.xaml;Views\UsuarioViews\EstudianteView.xaml;Views\UsuarioViews\RolWindow.xaml;Views\UsuarioViews\UsuarioView.xaml;
 
 False
 
