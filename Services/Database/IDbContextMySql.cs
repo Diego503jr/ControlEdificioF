@@ -10,6 +10,5 @@ namespace ControlEdificioF.Services.Database
     internal interface IDbContextMySql
     {
         MySqlConnection CreateConnection();
-        void CloseConnection(MySqlConnection connection);
     }
 }

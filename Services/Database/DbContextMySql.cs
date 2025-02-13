@@ -34,18 +34,5 @@ namespace ControlEdificioF.Services.Database
             connection.Open();
             return connection;
         }
-
-        /// <summary>
-        /// Cierra una conexión MySQL de forma segura si está abierta
-        /// </summary>
-        /// <param name="connection">Conexión a cerrar</param>
-        public void CloseConnection()
-        {
-            var connection = new MySqlConnection(_configDb.GetConnectionString());
-            if (connection.State != ConnectionState.Closed)
-            {
-                connection.Close();
-            }
-        }
     }
 }
