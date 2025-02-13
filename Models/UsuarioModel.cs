@@ -11,15 +11,19 @@ namespace ControlEdificioF.Model
         private int _UsuarioID;
         private string _Nombre_Usuario;
         private string _Apellido_Usuario;
-        private string _DUI_Usuario;
+        private int _DUI_Usuario;
         private int _RolID;
+        private string _Rol;
         private int _EstadoID;
+        private string _Estado;
 
         public int UsuarioID { get => _UsuarioID; set => _UsuarioID = value; }
         public string Nombre_Usuario { get => _Nombre_Usuario; set => _Nombre_Usuario = value; }
         public string Apellido_Usuario { get => _Apellido_Usuario; set => _Apellido_Usuario = value; }
-        public string DUI_Usuario { get => _DUI_Usuario; set => _DUI_Usuario = value; }
+        public int DUI_Usuario { get => _DUI_Usuario; set => _DUI_Usuario = value; }
         public int RolID { get => _RolID; set => _RolID = value; }
+        public string Rol { get => _Rol; set => _Rol = value; }
         public int EstadoID { get => _EstadoID; set => _EstadoID = value; }
+        public string Estado { get => _Estado; set => _Estado = value; }
     }
 }
