@@ -16,7 +16,7 @@ namespace ControlEdificioF.Services.Contexts
     /// Contexto de base de datos específico para operaciones CRUD de roles
     /// Hereda la funcionalidad base de conexión MySQL
     /// </summary>
-    internal class RolContext : DbContextMySql
+    internal class RolContext : DbContextMySql, IBaseContext<RolModel>
     {
         /// <summary>
         /// Constructor que requiere configuración de base de datos para inicializar la conexión base
@@ -30,7 +30,7 @@ namespace ControlEdificioF.Services.Contexts
         /// </summary>
         /// <param name="rolModel">Modelo con la información del rol a crear</param>
         /// <returns>Número de filas afectadas o -1 en caso de error</returns>
-        internal int CreateRol(RolModel rolModel)
+        public int Create(RolModel rol)
         {
             int res = -1;
             try
@@ -41,11 +41,10 @@ namespace ControlEdificioF.Services.Contexts
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "SPCreateRol";
 
-                    command.Parameters.AddWithValue("r_rol", rolModel.Rol);
-                    command.Parameters.AddWithValue("r_estadoid", rolModel.EstadoId);
+                    command.Parameters.AddWithValue("r_rol", rol.Rol);
+                    command.Parameters.AddWithValue("r_estadoid", rol.EstadoId);
 
                     res = command.ExecuteNonQuery();
-                    CloseConnection();
                 }
             }
             catch (Exception ex)
@@ -59,7 +58,7 @@ namespace ControlEdificioF.Services.Contexts
         /// Obtiene la lista completa de roles desde la base de datos
         /// </summary>
         /// <returns>Colección observable de roles o colección vacía en caso de error</returns>
-        internal ObservableCollection<RolModel> ReadRoles()
+        public ObservableCollection<RolModel> Read()
         {
             ObservableCollection<RolModel> lstRol = new ObservableCollection<RolModel>();
             try
@@ -67,8 +66,8 @@ namespace ControlEdificioF.Services.Contexts
                 using (var connection = CreateConnection())
                 using (var command = connection.CreateCommand())
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "SPGetRoles";
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "vrol";
 
                     using (DbDataReader ddr = command.ExecuteReader())
                     {
@@ -76,13 +75,12 @@ namespace ControlEdificioF.Services.Contexts
                         {
                             lstRol.Add(new RolModel
                             {
-                                RolID = int.Parse(ddr["RolID"].ToString()),
+                                RolID = int.Parse(ddr["Id"].ToString()),
                                 Rol = ddr["Rol"].ToString(),
-                                Estado = ddr["EstadoID"].ToString()
+                                Estado = ddr["Estado"].ToString()
                             });
                         }
                     }
-                    CloseConnection();
                 }
             }
             catch (Exception ex)
@@ -97,7 +95,7 @@ namespace ControlEdificioF.Services.Contexts
         /// </summary>
         /// <param name="rolModel">Modelo con la información actualizada del rol</param>
         /// <returns>Número de filas afectadas o -1 en caso de error</returns>
-        internal int UpdateRol(RolModel rolModel)
+        public int Update(RolModel rol)
         {
             int res = -1;
             try
@@ -108,12 +106,11 @@ namespace ControlEdificioF.Services.Contexts
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "SPUpdateRol";
 
-                    command.Parameters.AddWithValue("r_rolid", rolModel.RolID);
-                    command.Parameters.AddWithValue("r_rol", rolModel.Rol);
-                    command.Parameters.AddWithValue("r_estadoid", rolModel.EstadoId);
+                    command.Parameters.AddWithValue("r_rolid", rol.RolID);
+                    command.Parameters.AddWithValue("r_rol", rol.Rol);
+                    command.Parameters.AddWithValue("r_estadoid", rol.EstadoId);
 
                     res = command.ExecuteNonQuery();
-                    CloseConnection();
                 }
             }
             catch (Exception ex)
@@ -128,7 +125,7 @@ namespace ControlEdificioF.Services.Contexts
         /// </summary>
         /// <param name="rolModel">Modelo que contiene el ID del rol a eliminar</param>
         /// <returns>Número de filas afectadas o -1 en caso de error</returns>
-        internal int DeleteRol(RolModel rolModel)
+        public int Delete(RolModel rol)
         {
             int res = -1;
             try
@@ -139,10 +136,9 @@ namespace ControlEdificioF.Services.Contexts
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "SPDeleteRol";
 
-                    command.Parameters.AddWithValue("r_rolid", rolModel.RolID);
+                    command.Parameters.AddWithValue("r_rolid", rol.RolID);
 
                     res = command.ExecuteNonQuery();
-                    CloseConnection();
                 }
             }
             catch (Exception ex)
