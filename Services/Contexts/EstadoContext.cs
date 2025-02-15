@@ -1,4 +1,5 @@
 ﻿using ControlEdificioF.Models;
+using ControlEdificioF.Services.Abstractions;
 using ControlEdificioF.Services.Database;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace ControlEdificioF.Services.Contexts
     /// Contexto de base de datos para operaciones CRUD de estados
     /// Implementa la interfaz genérica IBaseContext para operaciones estándar
     /// </summary>
-    internal class EstadoContext : DbContextMySql, IBaseContext<EstadoModel>
+    internal class EstadoContext : DbContextMySql, ICRU<EstadoModel>
     {
         /// <summary>
         /// Constructor que inicializa el contexto con la configuración de base de datos
@@ -61,15 +62,14 @@ namespace ControlEdificioF.Services.Contexts
                 using (var command = connection.CreateCommand())
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "vestado";
+                    command.CommandText = "SELECT * FROM vestado";
                     using (DbDataReader ddr = command.ExecuteReader())
                     {
                         while (ddr.Read())
                         {
                             lstEstado.Add(new EstadoModel
                             {
-                                EstadoID = int.Parse(ddr["EstadoID"].ToString()),
-                                Estado = ddr["Estado"].ToString()
+                               
                             });
                         }
                     }
@@ -110,14 +110,12 @@ namespace ControlEdificioF.Services.Contexts
         }
 
         /// <summary>
-        /// Método Delete no implementado
+        /// Método Delete no Permitido
         /// </summary>
         /// <param name="estadoModel">Modelo del estado</param>
-        /// <returns>Siempre retorna -1 indicando no implementación</returns>
         public int Delete(EstadoModel estadoModel)
         {
-            int res = -1;
-            return res;
+            throw new NotImplementedException("Eliminar no esta permitido en esta entidad");
         }
     }
 }

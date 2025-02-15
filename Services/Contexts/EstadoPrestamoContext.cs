@@ -13,24 +13,22 @@ using System.Threading.Tasks;
 namespace ControlEdificioF.Services.Contexts
 {
     /// <summary>
-    /// Contexto de base de datos para operaciones CRUD de carreras universitarias
+    /// Contexto de base de datos para operaciones CRUD de estados de préstamo
     /// Implementa la interfaz genérica IBaseContext para operaciones estándar
     /// </summary>
-    internal class CarreraContext : DbContextMySql, ICRUD<CarreraModel>
+    internal class EstadoPrestamoContext : DbContextMySql, ICRU<EstadoPrestamoModel>
     {
         /// <summary>
         /// Constructor que inicializa el contexto con la configuración de base de datos
         /// </summary>
-        public CarreraContext(ConfigDb configDb) : base(configDb)
-        {
-        }
+        public EstadoPrestamoContext(ConfigDb configDb) : base(configDb) { }
 
         /// <summary>
-        /// Crea un nuevo registro de carrera en la base de datos
+        /// Crea un nuevo registro de estado de préstamo en la base de datos
         /// </summary>
-        /// <param name="carrera">Datos de la carrera a crear</param>
+        /// <param name="estadoPrestamo">Datos del estado de préstamo a crear</param>
         /// <returns>Número de filas afectadas o -1 en caso de error</returns>
-        public int Create(CarreraModel carrera)
+        public int Create(EstadoPrestamoModel estadoPrestamo)
         {
             int res = -1;
             try
@@ -39,9 +37,8 @@ namespace ControlEdificioF.Services.Contexts
                 using (var command = connection.CreateCommand())
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "SPCreateCarrera";
-                    command.Parameters.AddWithValue("c_carrera", carrera.Carrera);
-                    command.Parameters.AddWithValue("c_estadoid", carrera.EstadoId);
+                    command.CommandText = "SPCreateEstadoPrestamo";
+                    command.Parameters.AddWithValue("ep_estadoprestamo", estadoPrestamo.Estado_Prestamo);
                     res = command.ExecuteNonQuery();
                 }
             }
@@ -53,24 +50,24 @@ namespace ControlEdificioF.Services.Contexts
         }
 
         /// <summary>
-        /// Obtiene todas las carreras desde la vista vcarrera
+        /// Obtiene todos los estados de préstamo desde la vista vestadopretamo
         /// </summary>
-        /// <returns>Colección observable de carreras o colección vacía en caso de error</returns>
-        public ObservableCollection<CarreraModel> Read()
+        /// <returns>Colección observable de estados de préstamo o colección vacía en caso de error</returns>
+        public ObservableCollection<EstadoPrestamoModel> Read()
         {
-            ObservableCollection<CarreraModel> lstCarrera = new ObservableCollection<CarreraModel>();
+            ObservableCollection<EstadoPrestamoModel> lstEstado = new ObservableCollection<EstadoPrestamoModel>();
             try
             {
                 using (var connection = CreateConnection())
                 using (var command = connection.CreateCommand())
                 {
-                    command.CommandType = CommandType.Text;
-                    command.CommandText = "SELECT * FROM vcarrera";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "SELECT * FROM vestadopretamo";
                     using (DbDataReader ddr = command.ExecuteReader())
                     {
                         while (ddr.Read())
                         {
-                            lstCarrera.Add(new CarreraModel
+                            lstEstado.Add(new EstadoPrestamoModel
                             {
                                
                             });
@@ -82,15 +79,15 @@ namespace ControlEdificioF.Services.Contexts
             {
                 Console.WriteLine(ex.Message);
             }
-            return lstCarrera;
+            return lstEstado;
         }
 
         /// <summary>
-        /// Actualiza los datos de una carrera existente
+        /// Actualiza los datos de un estado de préstamo existente
         /// </summary>
-        /// <param name="carrera">Datos actualizados de la carrera</param>
+        /// <param name="estadoPrestamo">Datos actualizados del estado de préstamo</param>
         /// <returns>Número de filas afectadas o -1 en caso de error</returns>
-        public int Update(CarreraModel carrera)
+        public int Update(EstadoPrestamoModel estadoPrestamo)
         {
             int res = -1;
             try
@@ -99,10 +96,9 @@ namespace ControlEdificioF.Services.Contexts
                 using (var command = connection.CreateCommand())
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "SPUpdateCarrera";
-                    command.Parameters.AddWithValue("c_carreraid", carrera.CarreraID);
-                    command.Parameters.AddWithValue("c_carrera", carrera.Carrera);
-                    command.Parameters.AddWithValue("c_estadoid", carrera.EstadoId);
+                    command.CommandText = "SPUpdateEstadoPrestamo";
+                    command.Parameters.AddWithValue("ep_estadoprestamoid", estadoPrestamo.Estado_PrestamoID);
+                    command.Parameters.AddWithValue("ep_estadoprestamo", estadoPrestamo.Estado_Prestamo);
                     res = command.ExecuteNonQuery();
                 }
             }
@@ -114,29 +110,12 @@ namespace ControlEdificioF.Services.Contexts
         }
 
         /// <summary>
-        /// Elimina una carrera específica de la base de datos
+        /// Método Delete no Permitido
         /// </summary>
-        /// <param name="carrera">Modelo que contiene el ID de la carrera a eliminar</param>
-        /// <returns>Número de filas afectadas o -1 en caso de error</returns>
-        public int Delete(CarreraModel carrera)
+        /// <param name="estadoPrestamo">Modelo del estado de préstamo</param>
+        public int Delete(EstadoPrestamoModel estadoPrestamo)
         {
-            int res = -1;
-            try
-            {
-                using (var connection = CreateConnection())
-                using (var command = connection.CreateCommand())
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "SPDeleteCarrera";
-                    command.Parameters.AddWithValue("c_carreraid", carrera.CarreraID);
-                    res = command.ExecuteNonQuery();
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            return res;
+            throw new NotImplementedException("Eliminar no esta permitido en esta entidad");
         }
     }
 }

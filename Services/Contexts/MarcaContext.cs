@@ -8,6 +8,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ControlEdificioF.Services.Abstractions;
 
 namespace ControlEdificioF.Services.Contexts
 {
@@ -15,7 +16,7 @@ namespace ControlEdificioF.Services.Contexts
     /// Contexto de base de datos para operaciones CRUD de marcas.
     /// Implementa la interfaz genérica IBaseContext para operaciones estándar.
     /// </summary>
-    internal class MarcaContext : DbContextMySql, IBaseContext<MarcaModel>
+    internal class MarcaContext : DbContextMySql, ICRUD<MarcaModel>
     {
         /// <summary>
         /// Constructor que inicializa el contexto con la configuración de base de datos.
@@ -64,16 +65,14 @@ namespace ControlEdificioF.Services.Contexts
                 using (var command = connection.CreateCommand())
                 {
                     command.CommandType = CommandType.Text;
-                    command.CommandText = "vmarca";
+                    command.CommandText = "SELECT * FROM vmarca";
                     using (DbDataReader ddr = command.ExecuteReader())
                     {
                         while (ddr.Read())
                         {
                             lstMarca.Add(new MarcaModel
                             {
-                                MarcaID = int.Parse(ddr["Id"].ToString()),
-                                Marca = ddr["Marca"].ToString(),
-                                Estado = ddr["Estado"].ToString()
+                               
                             });
                         }
                     }

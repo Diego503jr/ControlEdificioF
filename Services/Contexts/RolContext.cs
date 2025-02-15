@@ -1,4 +1,5 @@
 ﻿using ControlEdificioF.Models;
+using ControlEdificioF.Services.Abstractions;
 using ControlEdificioF.Services.Database;
 using MySql.Data.MySqlClient;
 using System;
@@ -16,7 +17,7 @@ namespace ControlEdificioF.Services.Contexts
     /// Contexto de base de datos específico para operaciones CRUD de roles
     /// Hereda la funcionalidad base de conexión MySQL
     /// </summary>
-    internal class RolContext : DbContextMySql, IBaseContext<RolModel>
+    internal class RolContext : DbContextMySql, ICRUD<RolModel>
     {
         /// <summary>
         /// Constructor que requiere configuración de base de datos para inicializar la conexión base
@@ -67,7 +68,7 @@ namespace ControlEdificioF.Services.Contexts
                 using (var command = connection.CreateCommand())
                 {
                     command.CommandType = CommandType.Text;
-                    command.CommandText = "vrol";
+                    command.CommandText = "SELECT * FROM vrol";
 
                     using (DbDataReader ddr = command.ExecuteReader())
                     {
@@ -75,9 +76,7 @@ namespace ControlEdificioF.Services.Contexts
                         {
                             lstRol.Add(new RolModel
                             {
-                                RolID = int.Parse(ddr["Id"].ToString()),
-                                Rol = ddr["Rol"].ToString(),
-                                Estado = ddr["Estado"].ToString()
+                                
                             });
                         }
                     }

@@ -1,4 +1,5 @@
 ﻿using ControlEdificioF.Models;
+using ControlEdificioF.Services.Abstractions;
 using ControlEdificioF.Services.Database;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace ControlEdificioF.Services.Contexts
     /// Contexto de base de datos para operaciones CRUD de modelos de equipos
     /// Implementa la interfaz genérica IBaseContext para operaciones estándar
     /// </summary>
-    internal class ModeloContext : DbContextMySql, IBaseContext<ModeloModel>
+    internal class ModeloContext : DbContextMySql, ICRUD<ModeloModel>
     {
         /// <summary>
         /// Constructor que inicializa el contexto con la configuración de base de datos
@@ -65,16 +66,14 @@ namespace ControlEdificioF.Services.Contexts
                 using (var command = connection.CreateCommand())
                 {
                     command.CommandType = CommandType.Text;
-                    command.CommandText = "vmodelo";
+                    command.CommandText = "SELECT * FROM vmodelo";
                     using (DbDataReader ddr = command.ExecuteReader())
                     {
                         while (ddr.Read())
                         {
                             lstCarrera.Add(new ModeloModel
                             {
-                                ModeloID = int.Parse(ddr["Id"].ToString()),
-                                Modelo = ddr["Modelo"].ToString(),
-                                Estado = ddr["Estado"].ToString()
+                                
                             });
                         }
                     }

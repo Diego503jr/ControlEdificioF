@@ -1,5 +1,6 @@
 ﻿using ControlEdificioF.Model;
 using ControlEdificioF.Models;
+using ControlEdificioF.Services.Abstractions;
 using ControlEdificioF.Services.Database;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace ControlEdificioF.Services.Contexts
     /// Contexto de base de datos para operaciones CRUD de usuarios
     /// Implementa la interfaz genérica IBaseContext para operaciones estándar
     /// </summary>
-    internal class UsuariosContext : DbContextMySql, IBaseContext<UsuarioModel>
+    internal class UsuariosContext : DbContextMySql, ICRUD<UsuarioModel>
     {
         /// <summary>
         /// Constructor que inicializa el contexto con la configuración de base de datos
@@ -69,7 +70,7 @@ namespace ControlEdificioF.Services.Contexts
                 using (var command = connection.CreateCommand())
                 {
                     command.CommandType = CommandType.Text;
-                    command.CommandText = "vusuario";
+                    command.CommandText = "SELECT * FROM vusuario";
 
                     using (DbDataReader ddr = command.ExecuteReader())
                     {
@@ -77,12 +78,6 @@ namespace ControlEdificioF.Services.Contexts
                         {
                             lstUsuario.Add(new UsuarioModel
                             {
-                                UsuarioID = int.Parse(ddr["Id"].ToString()),
-                                Nombre_Usuario = ddr["Nombre"].ToString(),
-                                Apellido_Usuario = ddr["Apellido"].ToString(),
-                                DUI_Usuario = int.Parse(ddr["DUI"].ToString()),
-                                Rol = ddr["Rol"].ToString(),
-                                Estado = ddr["Estado"].ToString()
                             });
                         }
                     }

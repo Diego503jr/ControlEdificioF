@@ -1,4 +1,5 @@
 ﻿using ControlEdificioF.Models;
+using ControlEdificioF.Services.Abstractions;
 using ControlEdificioF.Services.Database;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace ControlEdificioF.Services.Contexts
     /// Contexto de base de datos para operaciones CRUD de centros de cómputo
     /// Implementa la interfaz genérica IBaseContext para operaciones estándar
     /// </summary>
-    internal class CentroComputoContext : DbContextMySql, IBaseContext<CentroComputoModel>
+    internal class CentroComputoContext : DbContextMySql, ICRUD<CentroComputoModel>
     {
         /// <summary>
         /// Constructor que inicializa el contexto con la configuración de base de datos
@@ -65,7 +66,7 @@ namespace ControlEdificioF.Services.Contexts
                 using (var command = connection.CreateCommand())
                 {
                     command.CommandType = CommandType.Text;
-                    command.CommandText = "vcentrocomputo";
+                    command.CommandText = "SELECT * FROM vcentrocomputo";
 
                     using (DbDataReader ddr = command.ExecuteReader())
                     {
@@ -73,9 +74,7 @@ namespace ControlEdificioF.Services.Contexts
                         {
                             lstComputo.Add(new CentroComputoModel
                             {
-                                Centro_ComputoID = int.Parse(ddr["Id"].ToString()),
-                                Centro_Computo = ddr["Computo"].ToString(),
-                                Estado = ddr["Estado"].ToString()
+                               
                             });
                         }
                     }
