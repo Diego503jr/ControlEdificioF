@@ -42,7 +42,7 @@ Para ejecutar el proyecto, solamente presiona `Run` en el IDE Visual Studio.
 2. Recompilar solucion.
 3. Compilar solucion.
 
-**Si esto no funciona:** Cambia las versiones de material-design y vuelve al punto 1
+**📌 Si esto no funciona:** Cambia las versiones de material-design y vuelve al punto 1
 
 ## ✨ Funcionalidades
 - Gestión de usuarios con diferentes roles y permisos.
