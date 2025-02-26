@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ControlEdificioF.Model
 {
-    public class StudentModel
+    public class EstudianteModel
     {
         private int _EstudianteID;
         private string _Nombre_Estudiante;
