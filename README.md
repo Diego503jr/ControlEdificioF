@@ -51,4 +51,4 @@ Para ejecutar el proyecto, solamente presiona `Run` en el IDE Visual Studio.
 - Sistema modular para facilitar escalabilidad y mantenimiento.
 
 ## 📱 Contacto
-Para más información, puedes contactarme en [diegocarias789@gmail].
+Para más información, puedes contactarme en [Gmail](diegocarias789@gmail) o [LinkedIn](https://www.linkedin.com/in/diego-carias/).
