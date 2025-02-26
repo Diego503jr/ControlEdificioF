@@ -52,4 +52,5 @@ Para ejecutar el proyecto, solamente presiona `Run` en el IDE Visual Studio.
 
 ## 📱 Contacto
 Para más información, puedes contactarme en [Gmail](mailto:diegocarias789@gmail), [LinkedIn](https://www.linkedin.com/in/diego-carias/).
-Te gustaria que desarrollemos una apliacion puedes visitar mi sitio web [Coders Solutions](https://coders-solutions.vercel.app/).
+
+Te gustaria que desarrollemos una aplicacion puedes visitar mi sitio web [Coders Solutions](https://coders-solutions.vercel.app/).
